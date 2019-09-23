@@ -1,0 +1,23 @@
+.nav {
+    grid-area: n;
+
+    padding: 25px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5ac5fb+0,5ac5fb+25,7e90df+50,9472c2+75,a2529c+100 */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#90d6f9+0,75c0f9+25,7e90df+50,9472c2+75,a2529c+100 */
+    background: #90d6f9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #90d6f9 0%, #75c0f9 25%, #7e90df 50%, #9472c2 75%, #a2529c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #90d6f9 0%,#75c0f9 25%,#7e90df 50%,#9472c2 75%,#a2529c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #90d6f9 0%,#75c0f9 25%,#7e90df 50%,#9472c2 75%,#a2529c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90d6f9', endColorstr='#a2529c',GradientType=0 ); /* IE6-9 */
+
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.item a.active {
+    color: #004fa7;
+}

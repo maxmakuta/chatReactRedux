@@ -1,0 +1,31 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    grid-template-rows:  minmax(700px, auto) 1fr;
+
+}
+
+.dialog a {
+    text-decoration: none;
+    color: #3E3849;
+}
+
+.dialogsItem {
+    padding: 10px;
+
+
+}
+
+/*.dialogsItem .active {*/
+/*    color: gold;*/
+/*}*/
+
+.messages {
+    padding: 10px;
+    color: black;
+}
+
+.messages .message {
+
+
+}

@@ -1,0 +1,9 @@
+
+.img  {
+    width: auto;
+    height: 150px;
+
+    background-image:url("https://images.alphacoders.com/101/thumb-1920-1013232.jpg") ;
+    background-repeat: no-repeat;
+    /*background-position: center;*/
+}

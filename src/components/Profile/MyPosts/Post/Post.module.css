@@ -1,0 +1,52 @@
+.item {
+    display: grid;
+    grid-template-columns:  minmax(70px, auto) 10fr;
+    padding-top: 5px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: black;
+    width: auto;
+    border-radius: 30px;
+    background-color: white;
+    color: #8ac5e9;
+}
+
+.post {
+
+
+    padding-right: 20px;
+    display: grid;
+    grid-template-rows: auto minmax(8px, auto);
+
+
+}
+
+.item div img {
+
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+
+    background-color: #8ac5e9;
+}
+
+.item div p {
+
+    margin: 0;
+}
+
+.post p {
+    color: black;
+    margin: 0;
+
+
+}
+
+.post span {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 3px;
+
+
+}

@@ -1,0 +1,12 @@
+.header {
+    grid-area: h;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5ac5fb+0,5ac5fb+25,7e90df+50,9472c2+75,a2529c+100 */
+    background: #7E90DF;
+
+}
+
+.header img {
+    width: 100px;
+    margin: 5px;
+
+}
