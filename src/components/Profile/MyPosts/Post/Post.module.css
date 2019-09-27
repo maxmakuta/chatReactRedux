@@ -28,6 +28,7 @@
     border-radius: 30px;
 
     background-color: #8ac5e9;
+    box-shadow: 0 0 7px #666; /* Параметры тени */
 }
 
 .item div p {

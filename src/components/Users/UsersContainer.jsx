@@ -1,26 +1,27 @@
 import React from 'react';
-
-import {addMesageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogsReducer";
-
-import Dialogs from "./Dialogs";
+import Users from "./Users";
 import {connect} from "react-redux";
+import {followAC, setUsersAC, unfollowAC} from "../../redux/UsersReducer";
 
 
 let mapStateToProps = (state) => {
     return {
-        messagesPage: state.messagesPage
+        users: state.usersPage.users
     }
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addMessage: () => {
-            dispatch(addMesageActionCreator());
+        follow: (userId) => {
+            dispatch(unfollowAC(userId));
         },
-        onMessageChange: (text) => {
-            dispatch(updateNewMessageActionCreator(text));
-
+        unfollow: (userId) => {
+            dispatch(followAC(userId));
+        },
+        setUsers: (users) => {
+            dispatch(setUsersAC(users));
         }
-    }};
-    const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
-    export default DialogsContainer;
+
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

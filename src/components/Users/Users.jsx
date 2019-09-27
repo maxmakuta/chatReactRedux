@@ -1,51 +1,59 @@
 import React from 'react';
-import s from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
-import Message from "./Message/Message";
-import DialogItem from "./DialogItem/DialogsItem";
-import {addMesageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogsReducer";
+import s from './Users.module.css';
+import * as axios from 'axios';
+import userPhoto from '../../img/user.jpg'
 
 
-
-
-const Dialogs = (props) => {
-
-    let messagesElement = props.messagesPage.messages.map((m,key) => <Message message={m.message} id={m.id} key={key}/>);
-    let nameElement = props.messagesPage.dialogs.map((n,key) => <DialogItem name={n.name} id={n.id} key={key}/>);
-    let newPostMessage = props.messagesPage.newPostMessage;
-
-    let newMessageElement = React.createRef();
-    let onaddMessage = () => {
-        props.addMessage();
+class Users extends React.Component {
+getUsers = () => {
+    if (this.props.users.length === 0) {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+    .then(response => {
+        this.props.setUsers(response.data.items);
+})
     }
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.onMessageChange(text);
-    };
-    return (
-        <div className={s.dialogs}>
-            <div className={s.dialogsItem}>
-                {nameElement}
-            </div>
-            <div>
-                <div className={s.messages}>
-                    {messagesElement}
-
-                </div>
-
-                <div>
-                    <textarea rows="10" cols="70" placeholder='Write a message...'  onChange={onMessageChange} ref={newMessageElement}
-                              value={props.messagesPage.newPostMessage}></textarea>
-                </div>
-                <div>
-                    <button onClick={onaddMessage}>Add message</button>
-                </div>
-
-
-            </div>
-        </div>
-    )
 }
 
+render (){
+    return <div>
+        <button onClick={this.getUsers}>getUsers</button>
+        {this.props.users.map(u => <div key={u.id} className={s.users}>
 
-export default Dialogs;
+            <div className={s.img}>
+                <img src={u.photos.large != null ? u.photos.small : userPhoto} className={s.photoUrl}/>
+            </div>
+
+
+
+            <div className={s.name}>{u.name}</div>
+
+            <div></div>
+            <div>{u.status}</div>
+
+            <div className={s.follow}>
+                {u.followed
+                    ? <button onClick={() => {
+                        this.props.follow(u.id)
+                    }}>Follow</button>
+                    : <button onClick={() => {
+                        this.props.unfollow(u.id)
+                    }}>Unfollow</button>
+                }
+            </div>
+            <div className={s.line}>
+
+            </div>
+
+
+        </div>)}
+    </div>
+
+}
+}
+export default Users;
+
+
+
+
+
+
