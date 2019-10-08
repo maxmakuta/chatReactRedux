@@ -47,3 +47,7 @@
     border-radius: 100px;
     box-shadow: 0 0 7px #666;
 }
+
+.selectedPage {
+    font-weight: bold;
+}
