@@ -1,10 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
-import {addMesageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogsReducer";
-
 
 
 
@@ -22,6 +19,7 @@ const Dialogs = (props) => {
         let text = newMessageElement.current.value;
         props.onMessageChange(text);
     };
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>

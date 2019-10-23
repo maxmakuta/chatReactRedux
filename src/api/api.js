@@ -20,6 +20,7 @@ export const usersAPI = {
     },
     follow(userId) {
         return instance.post(`follow/${userId}`)
+
     },
     getPtofile(userId) {
         return instance.get(`profile/${userId}`)
