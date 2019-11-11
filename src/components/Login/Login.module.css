@@ -1,19 +1,5 @@
-.header {
-    grid-area: h;
-    background: #7E90DF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-padding-right: 10px;
-
-}
-
-.header img {
-    width: 100px;
-    margin: 5px;
-
-}
-.loginBlock {
-color: white;
-
+.formControlError {
+    border: 2px solid red ;
+    padding: 5px;
+    color: red;
 }

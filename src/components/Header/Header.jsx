@@ -7,7 +7,9 @@ const Header = (props) => {
 
         <img src='https://tehnot.com/wp-content/uploads/2017/03/viber001.png' />
         <div >
-            { props.isAuth? props.login : <NavLink className={s.loginBlock} to={'/login'}>Login</NavLink>}
+            { props.isAuth
+                ? <div>{props.login} <button onClick={props.logout}>LOG OUT</button></div>
+                : <NavLink className={s.loginBlock} to={'/login'}>Login</NavLink>}
         </div>
     </header>
 }

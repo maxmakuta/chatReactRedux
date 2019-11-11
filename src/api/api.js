@@ -1,10 +1,11 @@
 import * as axios from "axios";
 
+
 const instance = axios.create({
     withCredentials: true,
     baseURL: "https://social-network.samuraijs.com/api/1.0/",
     headers: {
-        "API-KEY": "4a0986b8-7b55-4454-9699-312fc8401065"
+        "API-KEY": "a2d8ba57-c0cd-41a2-b085-f818480461f6"
     }
 })
 
@@ -23,12 +24,31 @@ export const usersAPI = {
 
     },
     getPtofile(userId) {
-        return instance.get(`profile/${userId}`)
+        console.warn("Obsolete method. Please profileAPI object!")
+        return profileAPI.getPtofile(userId);
     }
 }
+export const profileAPI = {
 
+    getPtofile(userId) {
+        return instance.get(`profile/${userId}`)
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status`, {status})
+    }
+
+}
 export const authAPI = {
     me() {
         return instance.get(`auth/me`)
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe})
+    },
+    logout() {
+        return instance.delete(`auth/login`)
     }
 }
