@@ -6,7 +6,7 @@ import {required, maxLengthCreator} from "../../../utils/validators/validators";
 import {Textarea} from "../../common/FopmsControls/FormsControls";
 
 
-const MyPosts = (props) => {
+const MyPosts = React.memo (props => {
 
     let postElement = props.profilePage.map((m, key) => <Post post={m.message} name={"Maxim"} like={m.like} id={m.id}
                                                               key={key}/>);
@@ -32,7 +32,7 @@ const MyPosts = (props) => {
         )
 
 
-}
+})
 const maxLength10 = maxLengthCreator (10)
 const AddMyPost = (props) => {
     return (

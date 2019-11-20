@@ -7,7 +7,7 @@ import {Textarea} from "../common/FopmsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 
 
-const Dialogs = (props) => {
+const Dialogs = React.memo(props => {
 
     let messagesElement = props.messagesPage.messages.map((m, key) => <Message message={m.message} id={m.id}
                                                                                key={key}/>);
@@ -32,7 +32,7 @@ const Dialogs = (props) => {
             </div>
         </div>
     )
-}
+})
 const maxLength10 = maxLengthCreator (10)
 const AddMessageForm = (props) => {
 

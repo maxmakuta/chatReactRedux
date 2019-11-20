@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Post.module.css';
 
 
-const Post = (props) => {
+const Post = React.memo(props => {
 
     return (
         <div className={s.item}>
@@ -19,6 +19,6 @@ const Post = (props) => {
 
         </div>
     )
-}
+})
 
 export default Post;

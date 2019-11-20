@@ -4,8 +4,10 @@ import {Input} from "../common/FopmsControls/FormsControls";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {login} from "../../redux/authReducer";
 import {connect} from "react-redux";
-import {Redirect} from "react-router";
+
 import s from './Login.module.css';
+import {Redirect} from "react-router-dom";
+
 
 const maxLength20 = maxLengthCreator(20)
 const LoginForm = (props) => {
